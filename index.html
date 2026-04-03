@@ -12,10 +12,32 @@
   <body>
     <script type="module" src="main.js"></script>
     <div class="main-content">
-        <header class="header">
-            <img src="./assets/logo.png" alt="Логотип компании Лед-дисплей">
-            <h1 class="header__title">ООО «ЛЕД-дисплей»</h1>
-        </header>
+      <header class="header">
+        <img src="./assets/logo.png" alt="Логотип компании Лед-дисплей" class="header__logo">
+        <h1 class="header__title">ООО «ОООЛЕД-дисплей»</h1>
+      </header>
+      <section class="overview">
+        <div class="overview__stats">
+          <img src="./assets/user-avatar.webp" alt="Константинопольский К." class="overview__avatar">
+          <div class="overview__details">
+            <div class="overview__user-info">
+              <h2 class="overview__name">Константинопольский К.</h2>
+              <p class="overview__position">супервайзер</p>
+            </div>
+            <div class="overview__status-wrapper">
+              <span class="status status--active status--sm" aria-hidden="true"></span>
+              <span class="overview__status">online</span>
+            </div>
+          </div>
+        </div>
+        <div class="overview__messages">
+          <div class="overview__message-content">
+            <h3 class="overview__messages-count">24 новых сообщения</h3>
+            <p class="overview__alert">не забудьте проверить почту перед выходом</p>
+          </div>
+            <img src="./assets/alert.png" alt="Напоминание о проверке сообщений" class="overview__alert-icon">
+        </div>
+      </section>
     </div>
   </body>
 </html>
