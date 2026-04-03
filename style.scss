@@ -1,7 +1,39 @@
-@use "sass:color";
+@use "styles/index" as *;
 
-$primary-color: #aa866a;
+.main-content {
+  width: 100%;
+  max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 48px 6px;
+  border: 1px solid red;
 
-h1 {
-  color: $primary-color;
+  @media (width >= $breakpoint-desktop) {
+    padding: 68px 40px 90px 40px;
+    border: 1px solid green;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 17px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 52px;
+
+  &__title {
+    margin: 0;
+    color: $color-text-title;
+    font-weight: 600;
+    font-size: $fs-16;
+  }
+
+  @media (width >= $breakpoint-desktop) {
+    margin-bottom: 60px;
+
+    &__title {
+      font-size: $fs-23;
+    }
+  }
 }
