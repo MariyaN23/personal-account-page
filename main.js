@@ -1,10 +1,15 @@
 import "./style.scss";
+import Img1 from "./assets/Blaupunkt-50-50UJW5000T.webp";
+import Img2 from "./assets/JVC-50-LT-50MU7500.webp";
+import NoImage from "./assets/no-product-image.webp";
+import EyeIcon from "./assets/eye-open.svg";
+import PhoneIcon from "./assets/phone.svg";
 
 const adsData = [
     {
         id: 1,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: "./assets/Blaupunkt-50-50UJW5000T.webp",
+        url: Img1,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -18,7 +23,7 @@ const adsData = [
     {
         id: 2,
         name: "Телевизор JVC 50\" LT-50MU7500",
-        url: "./assets/no-product-image.webp",
+        url: NoImage,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -32,7 +37,7 @@ const adsData = [
     {
         id: 3,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: "./assets/JVC-50-LT-50MU7500.webp",
+        url: Img2,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -46,7 +51,7 @@ const adsData = [
     {
         id: 4,
         name: "Телевизор JVC 50\" LT-50MU7500",
-        url: "./assets/no-product-image.webp",
+        url: NoImage,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -60,7 +65,7 @@ const adsData = [
     {
         id: 5,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: "./assets/Blaupunkt-50-50UJW5000T.webp",
+        url: Img1,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -74,7 +79,7 @@ const adsData = [
     {
         id: 6,
         name: "Телевизор JVC 50\" LT-50MU7500",
-        url: "./assets/JVC-50-LT-50MU7500.webp",
+        url: Img2,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -88,7 +93,7 @@ const adsData = [
     {
         id: 7,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: "./assets/Blaupunkt-50-50UJW5000T.webp",
+        url: Img1,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -157,7 +162,7 @@ const mappedTableRows = adsData.map((product) => {
         <td class="ads-table__cell" data-label="Просмотры объявления">
           <div class="ads-table__ad-views">
             <img
-                src="./assets/eye-open.svg"
+                src=${EyeIcon}
                 alt="Просмотры"
                 class="ads-table__view-icon"
                 width="24"
@@ -169,7 +174,7 @@ const mappedTableRows = adsData.map((product) => {
         <td class="ads-table__cell" data-label="Просмотры телефона">
           <div class="ads-table__phone-views">
             <img
-                src="./assets/phone.svg"
+                src=${PhoneIcon}
                 alt="Просмотры"
                 class="ads-table__phone-icon"
                 width="24"

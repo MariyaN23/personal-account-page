@@ -199,7 +199,6 @@
 
     @media (width < $breakpoint-desktop) {
       display: block;
-      position: relative;
     }
   }
 
@@ -210,8 +209,10 @@
     border-radius: 10px;
     padding: 12px 9px 20px 10px;
     margin-top: 6px;
+    position: relative;
 
     @media (width >= $breakpoint-desktop) {
+      position: static;
       display: table-row;
       padding: 0;
       height: 100px;
