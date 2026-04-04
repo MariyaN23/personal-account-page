@@ -4,6 +4,7 @@ import Img2 from "./assets/JVC-50-LT-50MU7500.webp";
 import NoImage from "./assets/no-product-image.webp";
 import EyeIcon from "./assets/eye-open.svg";
 import PhoneIcon from "./assets/phone.svg";
+import KebabIcon from "./assets/kebab.svg";
 
 const adsData = [
     {
@@ -186,7 +187,7 @@ const mappedTableRows = adsData.map((product) => {
         <td class="ads-table__cell" data-label="Настройки">
           <button class="ads-table__settings-btn" type="button">
             <img
-                src="./assets/kebab.svg"
+                src=${KebabIcon}
                 alt="Просмотры"
                 class="ads-table__settings-icon"
                 width="24"
