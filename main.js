@@ -194,3 +194,24 @@ const mappedTableRows = adsData.map((product) => {
 })
 
 tableBody.innerHTML = mappedTableRows.join('')
+
+const selectionPanel = document.querySelector('.selection-panel');
+const countText = document.querySelector('.selection-panel__count');
+
+function updateSelection() {
+    const checkedCheckboxes = tableBody.querySelectorAll('.ads-table__checkbox:checked')
+    const count = checkedCheckboxes.length
+
+    if (count > 0) {
+        selectionPanel.classList.add('selection-panel--active')
+        countText.textContent = `Выбрано ${count} на странице:`
+    } else {
+        selectionPanel.classList.remove('selection-panel--active')
+    }
+}
+
+tableBody.addEventListener('change', (e) => {
+    if (e.target.classList.contains('ads-table__checkbox')) {
+        updateSelection()
+    }
+})

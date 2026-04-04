@@ -415,6 +415,13 @@
     background-position: center;
   }
 
+  &--delete {
+    border-radius: unset;
+    background-image: url("./assets/delete.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   &--paused {
     background-color: $color-text-secondary;
   }
@@ -427,5 +434,85 @@
   &--base {
     width: 16px;
     height: 16px;
+  }
+}
+
+.selection-panel {
+  display: none;
+
+  @media (width >= $breakpoint-desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+    position: sticky;
+    bottom: 40px;
+
+    &__inner {
+      color: $color-text-action;
+      background-color: $color-card-secondary-background;
+      backdrop-filter: blur(43px);
+      box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2), 0 0 3px 0 rgba(0, 0, 0, 0.15);
+      padding: 21px 19px 22px 19px;
+      border-radius: 8px;
+      min-width: 200px;
+    }
+
+    &__count {
+      width: 100%;
+      padding: 0;
+      border-bottom: 1px solid rgba($color-background, 0);
+    }
+
+    &__content {
+      display: none;
+      align-items: center;
+    }
+
+    &__placeholder {
+      display: block;
+      margin: 0;
+      color: $color-text-secondary;
+    }
+
+    &--active {
+      .selection-panel {
+        &__inner {
+          background-color: $color-card-secondary-background;
+          min-width: 1039px;
+          padding: 0;
+        }
+
+        &__count {
+          width: 100%;
+          border-bottom: 1px solid rgba($color-background, 0.14);
+          padding: 21px 0 22px 19px;
+        }
+
+        &__placeholder {
+          display: none;
+        }
+
+        &__content {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+        }
+
+        &__action-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 16px 20px;
+
+          &:hover {
+            background-color: rgba($color-background, 0.14);
+            color: $color-background;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
   }
 }
