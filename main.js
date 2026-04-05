@@ -185,16 +185,40 @@ const mappedTableRows = adsData.map((product) => {
           </div>
         </td>
         <td class="ads-table__cell" data-label="Настройки">
-          <button class="ads-table__settings-btn" type="button">
-            <img
-                src=${KebabIcon}
-                alt="Просмотры"
-                class="ads-table__settings-icon"
-                width="24"
-                height="24"
-            >
-            <span class="ads-table__settings-text">Изменить</span>
-          </button>
+            <div class="ads-table__settings-wrapper">
+              <button class="ads-table__settings-btn" type="button">
+                <img
+                    src=${KebabIcon}
+                    alt="Просмотры"
+                    class="ads-table__settings-icon"
+                    width="24"
+                    height="24"
+                >
+                <span class="ads-table__settings-text">Изменить</span>
+              </button>
+              <div class="ads-table__dropdown">
+                <ul class="ads-table__dropdown-list">
+                   <li class="ads-table__dropdown-item">
+                      <button class="ads-table__dropdown-button" type="button">
+                        <span class="status status--paused status--base"></span>
+                        <span>На паузу</span>
+                      </button>
+                   </li>
+                   <li class="ads-table__dropdown-item">
+                      <button class="ads-table__dropdown-button" type="button">
+                        <span class="action action--edit"></span>
+                        <span>Изменить</span>
+                      </button>
+                   </li>
+                   <li class="ads-table__dropdown-item">
+                      <button class="ads-table__dropdown-button" type="button">
+                        <span class="action action--delete"></span>
+                        <span>Удалить</span>
+                      </button>
+                   </li>
+                </ul>
+              </div>
+            </div>
         </td>
       </tr>`
 })
@@ -220,4 +244,25 @@ tableBody.addEventListener('change', (e) => {
     if (e.target.classList.contains('ads-table__checkbox')) {
         updateSelection()
     }
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    const settingsButtons = document.querySelectorAll('.ads-table__settings-btn')
+    settingsButtons.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            event.stopPropagation()
+            const dropdown = btn.nextElementSibling
+            document.querySelectorAll('.ads-table__dropdown').forEach(d => {
+                if (d !== dropdown) {
+                    d.classList.remove('ads-table__dropdown--active')
+                }
+            })
+            dropdown.classList.toggle('ads-table__dropdown--active')
+        })
+    })
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.ads-table__dropdown').forEach(d => {
+            d.classList.remove('ads-table__dropdown--active')
+        })
+    })
 })
