@@ -1,6 +1,9 @@
-import Img1 from "../assets/Blaupunkt-50-50UJW5000T.webp";
-import Img2 from "../assets/JVC-50-LT-50MU7500.webp";
-import NoImage from "../assets/no-product-image.webp";
+import Img1sm from "../assets/Blaupunkt-50-50UJW5000T-sm.webp";
+import Img1lg from "../assets/Blaupunkt-50-50UJW5000T-lg.webp";
+import Img2sm from "../assets/JVC-50-LT-50MU7500-sm.webp";
+import Img2lg from "../assets/JVC-50-LT-50MU7500-lg.webp";
+import NoImageSm from "../assets/no-product-image-sm.webp";
+import NoImageLg from "../assets/no-product-image-lg.webp";
 import EyeIcon from "../assets/eye-open.svg";
 import PhoneIcon from "../assets/phone.svg";
 import KebabIcon from "../assets/kebab.svg";
@@ -9,7 +12,8 @@ const adsData = [
     {
         id: 1,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: Img1,
+        urlSm: Img1sm,
+        urlLg: Img1lg,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -23,7 +27,8 @@ const adsData = [
     {
         id: 2,
         name: "Телевизор JVC 50\" LT-50MU7500",
-        url: NoImage,
+        urlSm: NoImageSm,
+        urlLg: NoImageLg,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -37,7 +42,8 @@ const adsData = [
     {
         id: 3,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: Img2,
+        urlSm: Img2sm,
+        urlLg: Img2lg,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -51,7 +57,8 @@ const adsData = [
     {
         id: 4,
         name: "Телевизор JVC 50\" LT-50MU7500",
-        url: NoImage,
+        urlSm: NoImageSm,
+        urlLg: NoImageLg,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -65,7 +72,8 @@ const adsData = [
     {
         id: 5,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: Img1,
+        urlSm: Img1sm,
+        urlLg: Img1lg,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -79,7 +87,8 @@ const adsData = [
     {
         id: 6,
         name: "Телевизор JVC 50\" LT-50MU7500",
-        url: Img2,
+        urlSm: Img2sm,
+        urlLg: Img2lg,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -93,7 +102,8 @@ const adsData = [
     {
         id: 7,
         name: "Телевизор Blaupunkt 50\" 50UJW5000T",
-        url: Img1,
+        urlSm: Img1sm,
+        urlLg: Img1lg,
         serialNumber: "№ 100524674",
         article: "1020",
         date: "04 сен 2021",
@@ -135,6 +145,8 @@ const mappedTableRows = adsData.map((product) => {
                 src=${product.url}
                 alt=${product.name}
                 class="ads-table__image"
+                srcset="${product.urlSm} 34w, ${product.urlLg} 105w"
+                sizes="(max-width: 1024px) 105px, 34px"
             >
             <div class="ads-table__text-content">
               <p class="ads-table__name">${product.name}</p>
