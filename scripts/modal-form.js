@@ -1,6 +1,6 @@
 import {closeModal} from "./modal.js";
 
-const form = document.querySelector('#ad-form')
+export const form = document.querySelector('#ad-form')
 const validateField = (input) => {
     const parent = input.closest('.ad-form__field')
 
@@ -28,6 +28,13 @@ const validateField = (input) => {
     return true
 }
 
+export const clearValidation = () => {
+    const invalidFields = form.querySelectorAll('.ad-form__field--invalid')
+    invalidFields.forEach(field => {
+        field.classList.remove('ad-form__field--invalid')
+    })
+}
+
 form.addEventListener('input', (e) => {
     if (e.target.matches('.ad-form__input, .ad-form__textarea, .rating__input')) {
         validateField(e.target)
@@ -49,6 +56,5 @@ form.addEventListener('submit', (e) => {
 
     if (isValid) {
         closeModal()
-        form.reset()
     }
 })

@@ -32,7 +32,6 @@
     background: $color-background;
     width: 100%;
     z-index: 1001;
-    transition: transform $duration ease;
     align-self: flex-end;
     transform: translateY(100%);
 
@@ -42,7 +41,6 @@
       margin-top: 25vh;
       border-radius: 6px;
       align-self: auto;
-      transform: translateY(-20px);
       box-shadow: $box-shadow-modal;
     }
   }

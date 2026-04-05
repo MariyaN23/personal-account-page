@@ -25,5 +25,9 @@
     font-weight: 700;
     color: $color-text-accent;
     padding: 8px 10px 10px;
+
+    &:active {
+      background-color: $color-tapped-area;
+    }
   }
 }

@@ -16,6 +16,10 @@ button {
   color: inherit;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -23,6 +27,8 @@ body {
   font-size: $fs-15;
   color: $color-text-base;
   background-color: $color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {

@@ -1,3 +1,5 @@
+import {form, clearValidation} from "./modal-form.js";
+
 const openModalBtn = document.querySelector('.ads-manager__add-btn')
 const modal = document.querySelector('#addNewAd')
 const closeModalBtn = modal.querySelector('.modal__close')
@@ -11,6 +13,8 @@ const openModal = () => {
 export const closeModal = () => {
     modal.classList.remove('modal--open')
     document.body.style.overflow = ''
+    form.reset()
+    clearValidation()
 }
 
 openModalBtn.addEventListener('click', openModal)
