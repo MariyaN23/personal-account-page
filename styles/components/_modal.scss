@@ -1,0 +1,84 @@
+@use "../base" as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $duration ease, visibility $duration ease;
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  &__content {
+    position: relative;
+    background: $color-background;
+    width: 100%;
+    z-index: 1001;
+    transition: transform $duration ease;
+    align-self: flex-end;
+    transform: translateY(100%);
+
+    @media (width >= $breakpoint-desktop) {
+      max-width: 570px;
+      padding: 22px 20px 40px 20px;
+      margin-top: 25vh;
+      border-radius: 6px;
+      align-self: auto;
+      transform: translateY(-20px);
+      box-shadow: $box-shadow-modal;
+    }
+  }
+
+  &__title {
+    font-family: $font-montserrat;
+    font-size: $fs-22;
+    font-weight: 800;
+    color: $color-text-title;
+    padding: 32px 0 0 15px;
+    border-top: 1px solid $color-border-modal;
+
+    @media (width >= $breakpoint-desktop) {
+      padding: 0;
+      border-top: unset;
+    }
+  }
+
+  &--open &__content {
+    margin-top: 0;
+    transform: translateY(0);
+  }
+
+  &__close {
+    display: flex;
+    margin: 8px 8px 9px auto;
+    padding: 4px;
+    cursor: pointer;
+
+    @media (width >= $breakpoint-desktop) {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      border-radius: 50%;
+      background: $color-background;
+      box-shadow: $box-shadow-modal-close;
+    }
+  }
+}

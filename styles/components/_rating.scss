@@ -1,0 +1,40 @@
+@use "../base" as *;
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  &__input {
+    display: none;
+  }
+
+  &__icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: $color-rating;
+    -webkit-mask-image: url('../../assets/star.svg');
+    mask-image: url('../../assets/star.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: background-color $duration;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__label:hover &__icon,
+  &__label:hover ~ &__label &__icon {
+    background: $color-rating-hovered;
+  }
+
+  &__input:checked ~ &__label &__icon {
+    background: $color-rating-selected;
+  }
+}

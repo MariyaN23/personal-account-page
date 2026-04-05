@@ -1,0 +1,31 @@
+@use "../base" as *;
+
+.status {
+  display: inline-flex;
+  border-radius: 50%;
+
+  &--active {
+    background-color: $color-status-active;
+  }
+
+  &--inactive {
+    border-radius: unset;
+    background-image: url("../../assets/stop.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--paused {
+    background-color: $color-text-secondary;
+  }
+
+  &--sm {
+    width: 11px;
+    height: 11px;
+  }
+
+  &--base {
+    width: 16px;
+    height: 16px;
+  }
+}

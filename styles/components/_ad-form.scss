@@ -1,0 +1,125 @@
+@use "../base" as *;
+
+.ad-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+
+  @media (width >= $breakpoint-desktop) {
+    padding: 0;
+  }
+
+  &__field {
+    &--invalid {
+      .ad-form__error {
+        display: block;
+      }
+    }
+  }
+
+  &__field-group {
+    margin: 13px 0 36px;
+    border: 1px solid $color-text-action;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 0 0 #e7edf3;
+
+    @media (width >= $breakpoint-desktop) {
+      margin: 20px 0 24px;
+    }
+  }
+
+  &__field--title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 0 16px 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 8px;
+      right: 8px;
+      height: 1px;
+      background-color: $color-border-modal;
+    }
+  }
+
+  &__input {
+    font-family: $font-montserrat;
+    font-size: $fs-20;
+    font-weight: 800;
+    color: $color-text-base;
+
+    &::placeholder {
+      color: $color-text-secondary;
+    }
+  }
+
+  &__field--description {
+    position: relative;
+    padding: 12px 35px 0 20px;
+    height: 151px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 8px;
+      right: 8px;
+      height: 1px;
+      background-color: $color-border-modal;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    height: 100%;
+    width: 100%;
+
+    &::placeholder {
+      color: $color-text-secondary;
+    }
+  }
+
+  &__field--rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 13px 0 19px 17px;
+  }
+
+  &__error {
+    color: $color-error;
+    font-size: $fs-13;
+    display: none;
+  }
+
+  &__error--description {
+    position: absolute;
+    left: 20px;
+    top: 39px;
+  }
+
+  &__error--rating {
+    font-size: $fs-15;
+  }
+
+  &__submit-btn {
+    margin-bottom: 53px;
+    padding: 10px 20px 11px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+
+    @media (width >= $breakpoint-desktop) {
+      margin-bottom: 0;
+      width: 250px;
+    }
+  }
+}

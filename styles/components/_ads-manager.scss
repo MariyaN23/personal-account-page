@@ -1,0 +1,29 @@
+@use "../base" as *;
+
+.ads-manager {
+  margin-top: 36px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+
+    @media (width >= $breakpoint-desktop) {
+      padding: 14px 0 13px 16px;
+    }
+  }
+
+  &__count {
+    font-weight: 700;
+  }
+
+  &__add-btn {
+    position: absolute;
+    right: 10px;
+    font-weight: 700;
+    color: $color-text-accent;
+    padding: 8px 10px 10px;
+  }
+}

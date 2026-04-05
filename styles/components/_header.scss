@@ -1,0 +1,31 @@
+@use "../base" as *;
+
+.header {
+  display: flex;
+  gap: 17px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 52px;
+
+  &__title {
+    color: $color-text-title;
+    font-weight: 600;
+    font-size: $fs-16;
+  }
+
+  &__logo {
+    width: 53px;
+    height: 56px;
+    object-fit: cover;
+  }
+
+  @media (width >= $breakpoint-desktop) {
+    margin-bottom: 60px;
+
+    &__title {
+      font-size: $fs-23;
+    }
+  }
+}

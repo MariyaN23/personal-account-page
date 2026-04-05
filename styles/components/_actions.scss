@@ -1,0 +1,22 @@
+@use "../base" as *;
+
+.action {
+  display: inline-flex;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  &--delete {
+    border-radius: unset;
+    background-image: url("../../assets/delete.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--edit {
+    border-radius: unset;
+    background-image: url("../../assets/edit.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
