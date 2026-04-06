@@ -33,14 +33,13 @@
     width: 100%;
     z-index: 1001;
     align-self: flex-end;
-    transform: translateY(100%);
+    transform: translateY(0);
 
     @media (width >= $breakpoint-desktop) {
       max-width: 570px;
       padding: 22px 20px 40px 20px;
-      margin-top: 25vh;
       border-radius: 6px;
-      align-self: auto;
+      align-self: center;
       box-shadow: $box-shadow-modal;
     }
   }
@@ -60,7 +59,6 @@
   }
 
   &--open &__content {
-    margin-top: 0;
     transform: translateY(0);
   }
 

@@ -54,11 +54,13 @@
     margin-top: 32px;
     position: sticky;
     bottom: 40px;
+    pointer-events: none;
 
     &--active {
       .selection-panel__inner {
         min-width: 1039px;
         padding: 0;
+        pointer-events: auto;
       }
 
       .selection-panel__count {
